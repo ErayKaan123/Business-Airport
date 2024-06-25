@@ -14,7 +14,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={inter.className}><Navigation/>{children}</body>
+      <body className={inter.className}><Navigation/><div style={{position:"absolute", top:"100px", maxWidth: "100%", overflowX:"hidden"}}>{children}</div></body>
     </html>
   );
 }
