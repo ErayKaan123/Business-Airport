@@ -10,7 +10,7 @@ const AppContainer = styled.div`
   align-items: flex-start;
   justify-content: center;
   width: 100vw;
-  height: calc(100vh - 100px);
+  min-height: calc(100vh - 100px);
   overflow: visible;
   margin: 0;
   padding: 0;

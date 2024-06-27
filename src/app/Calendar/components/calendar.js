@@ -1,10 +1,14 @@
 // src/Calendar.js
+'use client'
 
+import { getCookie, setCookie } from 'cookies-next'
 import React, { useState } from 'react';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import moment from 'moment';
 import styled from 'styled-components';
+import {getCalendarEntriesByUserId, addEntryToUserById} from "@/dataservice";
+
 
 const CalendarContainer = styled.div`
   width: 100%;
@@ -87,12 +91,15 @@ const EventDescription = styled.p`
 const Calendar = () => {
   const [events, setEvents] = useState([]);
   const [newEvent, setNewEvent] = useState({
+    userId: getCookie("userId"),
     date: new Date(),
     endDate: null,
     time: '',
     title: '',
     description: ''
   });
+
+  getCalendarEntriesByUserId(getCookie("userId")).then((response)=>setEvents(response))
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -108,8 +115,9 @@ const Calendar = () => {
   };
 
   const addEvent = () => {
+    addEntryToUserById(getCookie("userId"), newEvent)
     setEvents([...events, newEvent]);
-    setNewEvent({ date: new Date(), endDate: null, time: '', title: '', description: '' });
+    setNewEvent({userId: getCookie("userId"), date: new Date(), endDate: null, time: '', title: '', description: '' });
   };
 
   const sortedEvents = events.slice().sort((a, b) => {
@@ -119,7 +127,7 @@ const Calendar = () => {
   });
 
   return (
-    <CalendarContainer>
+    <CalendarContainer> 
       <Title>Calendar</Title>
       <div>
         <SectionTitle>Add New Event</SectionTitle>
