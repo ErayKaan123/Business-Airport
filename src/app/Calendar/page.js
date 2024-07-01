@@ -1,62 +1,29 @@
-// src/Calendar.js
+// src/App.js
 'use client';
-import React, { useState } from 'react';
-import moment from 'moment';
-import './Calendar.css';
 
-const Calendar = () => {
-    const [date, setDate] = useState(moment());
+import React from 'react';
+import Calendar from './components/calendar';
+import styled from 'styled-components';
 
-    const startDay = date.clone().startOf('month').startOf('week');
-    const endDay = date.clone().endOf('month').endOf('week');
+const AppContainer = styled.div`
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  width: 100vw;
+  min-height: calc(100vh - 100px);
+  overflow: visible;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: #e9ecef;
+`;
 
-    const generateCalendar = () => {
-        const calendar = [];
-        let day = startDay.clone().subtract(1, 'day');
-        while (day.isBefore(endDay, 'day')) {
-            calendar.push(
-                Array(7)
-                    .fill(0)
-                    .map(() => day.add(1, 'day').clone())
-            );
-        }
-        return calendar;
-    };
+function App() {
+  return (
+    <AppContainer>
+      <Calendar />
+    </AppContainer>
+  );
+}
 
-    const isSameMonth = (day) => day.isSame(date, 'month');
-
-    const prevMonth = () => setDate(date.clone().subtract(1, 'month'));
-    const nextMonth = () => setDate(date.clone().add(1, 'month'));
-
-    const calendar = generateCalendar();
-
-    return (
-        <div className="calendar">
-            <header>
-                <div className="month-display">
-                    <button onClick={prevMonth}>{'<'}</button>
-                    <span>{date.format('MMMM YYYY')}</span>
-                    <button onClick={nextMonth}>{'>'}</button>
-                </div>
-                <div className="day-names">
-                    {['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'].map((d) => (
-                        <div key={d} className="day-name">{d}</div>
-                    ))}
-                </div>
-            </header>
-            <div className="calendar-body">
-                {calendar.map((week, idx) => (
-                    <div key={idx} className="week">
-                        {week.map((day) => (
-                            <div key={day.format('D')} className={`day ${isSameMonth(day) ? '' : 'faded'}`}>
-                                {day.format('D')}
-                            </div>
-                        ))}
-                    </div>
-                ))}
-            </div>
-        </div>
-    );
-};
-
-export default Calendar;
+export default App;
