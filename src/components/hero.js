@@ -8,7 +8,7 @@ const play = Play({ subsets: ["latin"], weight:"400" });
 
 export default function Hero() {
     return(
-    <div style={{height: "100vh", overflow: "hidden"}}>
+    <div style={{height: "calc(100vh - 100px)", overflow: "hidden"}}>
         <img style={{width: "100%" }} src="Cover10.png"/>
         <div style={{
             position: "absolute", 
