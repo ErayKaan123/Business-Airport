@@ -23,6 +23,7 @@ export default function Navigation() {
             </div>
             <div className="flex flex-row items-center gap-5 mt-5 mr-5 sm:justify-end sm:mt-0 sm:ps-5">
                     <a className="font-medium text-lg text-white" href="/" aria-current="page">Home</a>
+                    <a className="font-medium text-lg text-neutral-400 hover:text-white" href="/Login">Login</a>
                     <a className="font-medium text-lg text-neutral-400 hover:text-white" href="#">Buy Tickets</a>
                     <a className="font-medium text-lg text-neutral-400 hover:text-white " href="/Calendar">Calendar</a>
                     <a className="font-medium text-lg text-neutral-400 hover:text-white" href="#">Contact</a>
