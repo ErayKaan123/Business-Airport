@@ -1,15 +1,17 @@
 {
-  "users":[
-  {
-    "username":"Eray",
-    "password":"Eray123",
-    "userId": 1
-  },
-  {
-    "username":"JeanLuc",
-    "password":"JeanLuc123",
-    "userId": 2
-  }
+  "users": [
+    {
+      "username": "Eray",
+      "password": "Eray123",
+      "userId": 1,
+      "id": "8747"
+    },
+    {
+      "username": "JeanLuc",
+      "password": "JeanLuc123",
+      "userId": 2,
+      "id": "3587"
+    }
   ],
   "calendarEntries": [
     {
@@ -20,60 +22,6 @@
       "time": "",
       "title": "",
       "description": ""
-    },
-    {
-      "id": "a488",
-      "userId": "12",
-      "date": "2024-07-10",
-      "endDate": "2024-07-11",
-      "time": "10:00 AM",
-      "title": "Flight to New York",
-      "description": "Non-stop flight to New York"
-    },
-    {
-      "id": "b8de",
-      "userId": "12",
-      "date": "2024-07-10",
-      "endDate": "2024-07-11",
-      "time": "10:00 AM",
-      "title": "Flight to New York",
-      "description": "Non-stop flight to New York"
-    },
-    {
-      "id": "8739",
-      "userId": "12",
-      "date": "2024-07-12",
-      "endDate": "2024-07-13",
-      "time": "12:00 PM",
-      "title": "Flight to London",
-      "description": "Non-stop flight to London"
-    },
-    {
-      "id": "1872",
-      "userId": "12",
-      "date": "2024-07-10",
-      "endDate": "2024-07-11",
-      "time": "10:00 AM",
-      "title": "Flight to New York",
-      "description": "Non-stop flight to New York"
-    },
-    {
-      "id": "8a0a",
-      "userId": "12",
-      "date": "2024-07-10",
-      "endDate": "2024-07-11",
-      "time": "10:00 AM",
-      "title": "Flight to New York",
-      "description": "Non-stop flight to New York"
-    },
-    {
-      "id": "df4b",
-      "userId": "12",
-      "date": "2024-07-10",
-      "endDate": "2024-07-11",
-      "time": "10:00 AM",
-      "title": "Flight to New York",
-      "description": "Non-stop flight to New York"
     }
   ]
 }
