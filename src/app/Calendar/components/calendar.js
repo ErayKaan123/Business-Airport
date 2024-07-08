@@ -142,7 +142,7 @@
         });
         toast.success('Event added successfully');
       }).catch(error => {
-        toast.error('Failed to add event');
+        toast.error('Failed to add event. Try again.');
       });
     };
 
@@ -151,21 +151,20 @@
         setEvents(events.filter(e => e.id !== event.id));
         toast.success(`Successfully deleted your ${event.title.length  > 0 ? event.title : "Event"}`);
       }).catch(error => {
-        toast.error('Failed to delete event');
+        toast.error('Failed to delete event. Try again.');
       });
     };
 
     const deleteAllEvents = () => {
-      deleteAllCalendarEntries()
-      Promise.all(events.map(event => deleteCalendarEntryById(event.id)))
-        .then(() => {
-          setEvents([]);
-          toast.success('Successfully deleted all events');
-        })
-        .catch(error => {
-          toast.error('Failed to delete all events');
-        });
-    };
+      deleteAllCalendarEntries(getCookie('userId'))
+          .then(() => {
+              setEvents([]);
+              toast.success('Successfully deleted all events');
+          })
+          .catch(error => {
+              toast.error('Failed to delete all events. Try again.');
+          });
+  };
 
     const sortedEvents = events.slice().sort((a, b) => {
       const dateTimeA = new Date(`${moment(a.date).format('YYYY-MM-DD')}T${a.time}`);
