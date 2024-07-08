@@ -113,7 +113,6 @@ const Dialog = ({ isOpen, onClose, initialEvent, onSave }) => {
 
   const handleSave = () => {
     onSave(event);
-    toast.success('Event updated successfully');
     onClose();
   };
 
@@ -129,8 +128,6 @@ const Dialog = ({ isOpen, onClose, initialEvent, onSave }) => {
           <Input type="text" name="title" value={event.title} onChange={handleChange} />
           <Label>Description:</Label>
           <TextArea name="description" value={event.description} onChange={handleChange} />
-          <Label>Location:</Label>
-          <Input type="text" name="location" value={event.location} onChange={handleChange} />
           <Label>Start Date:</Label>
           <Input type="date" name="date" value={event.date} onChange={handleChange} />
           <Label>End Date:</Label>
