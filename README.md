@@ -161,7 +161,7 @@ Das Projekt demonstriert die folgenden Kompetenzen:
 
 Für Fragen oder Support, kontaktieren Sie bitte:
 
-- **Entwickler**: Luigi Cavuoti
+- **Entwickler**: Eray Kaan Cevik, 
 - **E-Mail**: luigi@example.com
 
 ---
