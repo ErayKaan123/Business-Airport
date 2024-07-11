@@ -1,4 +1,18 @@
 {
+  "users": [
+    {
+      "username": "115eraykaan32@gmail.com",
+      "password": "eraykaan123",
+      "userId": 1,
+      "id": "8747"
+    },
+    {
+      "username": "jean.jordi@lernende.bbw.ch",
+      "password": "jeanluc123",
+      "userId": 2,
+      "id": "3587"
+    }
+  ],
   "calendarEntries": [
     {
       "id": "0",
@@ -8,6 +22,15 @@
       "time": "",
       "title": "",
       "description": ""
+    },
+    {
+      "id": "0c76",
+      "userId": "1",
+      "date": "2024-08-30",
+      "endDate": "2024-08-01",
+      "time": "12:00 PM",
+      "title": "awdadadaddadwddadddd",
+      "description": "Non-stop flight to London (Summer flight)awddda"
     }
   ]
 }
