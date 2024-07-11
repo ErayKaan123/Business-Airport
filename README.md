@@ -1,10 +1,10 @@
-### Business Trip App Dokumentation
+### RPort Flughafen App Dokumentation
 
 ---
 
 ## 📋 Projektübersicht
 
-Willkommen zum **Business Trip App** Projekt! Diese Anwendung ist dafür konzipiert, Geschäftsreisen, Meetings, Flüge und Mitarbeiter effizient zu verwalten. Das Projekt nutzt React für das Frontend und einen JSON-Server auf Port 3001 für das Backend.
+Willkommen zur **RPort Flughafen App**! Diese Anwendung ist dafür konzipiert, Flüge zu buchen und die gebuchten Flüge und Termine in einem Kalender zu verwalten. Das Projekt nutzt React für das Frontend und einen JSON-Server auf Port 3001 für das Backend.
 
 ---
 
@@ -38,7 +38,7 @@ Die Projektstruktur umfasst die folgenden Hauptkomponenten:
 
 Die Anwendung implementiert die folgenden drei Anwendungsfälle:
 
-1. **Flugtickets kaufen**: Benutzer können Flugtickets kaufen, die Flüge hinzufügen, anzeigen und verwalten.
+1. **Flugtickets kaufen**: Benutzer können Flugtickets kaufen, Flüge hinzufügen, anzeigen und verwalten.
 2. **Kalenderansicht**: Termine und Flüge werden in einem Kalender angezeigt, sodass Benutzer ihre Zeitpläne leicht verwalten können.
 3. **Login mit Cookie**: Benutzer können sich einloggen, wobei die Authentifizierung über Cookies verwaltet wird.
 
