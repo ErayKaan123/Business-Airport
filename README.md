@@ -49,21 +49,25 @@ Die Anwendung implementiert die folgenden drei Anwendungsfälle:
 Beim Erstellen von neuen Einträgen, wie z.B. neuen Flügen oder Terminen, wird eine HTTP-POST-Anfrage an den Server gesendet. Hier ein Beispielcode:
 
 ```javascript
-const createFlight = async (flightData) => {
+export async function addEntryToUserById(userId, entry) {
     try {
-        const response = await fetch('http://localhost:3001/flights', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(flightData)
-        });
-        const data = await response.json();
-        return data;
+      const response = await fetch(`http://localhost:3001/calendarEntries?userId=${userId}`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(entry),
+      });
+  
+      if (!response.ok) {
+        throw new Error('Failed to add entry to user.');
+      }
+      console.log('Event added successfully');
     } catch (error) {
-        console.error('Error creating flight:', error);
+      console.error('Error adding entry:', error);
+      throw new Error('Failed to add entry to user.');
     }
-};
+  }
 ```
 
 - **`method: 'POST'`**: Die POST-Methode wird verwendet, um neue Ressourcen zu erstellen.
@@ -75,17 +79,13 @@ const createFlight = async (flightData) => {
 Zum Lesen oder Abrufen von Daten, wie z.B. das Anzeigen aller Flüge oder Termine, wird eine HTTP-GET-Anfrage verwendet:
 
 ```javascript
-const fetchFlights = async () => {
-    try {
-        const response = await fetch('http://localhost:3001/flights');
-        const data = await response.json();
-        return data;
-    } catch (error) {
-        console.error('Error fetching flights:', error);
-    }
-};
-```
+export async function getCalendarEntriesByUserId(userId) {
+    const response = await fetch(`http://localhost:3001/calendarEntries?userId=${userId}`);
+    if (response.ok) return response.json();
+    throw new Error(`Failed to fetch calendar entries for user id: ${userId}`);
+  }
 
+```
 - **`method: 'GET'`**: Die GET-Methode wird verwendet, um Daten vom Server abzurufen.
 - **`response.json()`**: Die Antwort wird in ein JSON-Format konvertiert, um sie leicht verarbeiten zu können.
 
@@ -94,21 +94,26 @@ const fetchFlights = async () => {
 Um bestehende Einträge zu aktualisieren, wie z.B. das Ändern von Flugdaten, wird eine HTTP-PUT-Anfrage verwendet:
 
 ```javascript
-const updateFlight = async (id, updatedFlightData) => {
+export async function updateCalendarEntryById(userId, updatedEvent) {
     try {
-        const response = await fetch(`http://localhost:3001/flights/${id}`, {
-            method: 'PUT',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(updatedFlightData)
-        });
-        const data = await response.json();
-        return data;
+      const response = await fetch(`http://localhost:3001/calendarEntries/${updatedEvent.id}?userId=${userId}`, {
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(updatedEvent),
+      });
+  
+      if (!response.ok) {
+        throw new Error(`Failed to update Calendar Entry. User Id: ${userId}, Calendar Id: ${updatedEvent.id}`);
+      }
+      console.log(`Updated Calendar Entry. User Id: ${userId}, Calendar Id: ${updatedEvent.id}`);
+      return response.json(); // Return updated event data if needed
     } catch (error) {
-        console.error('Error updating flight:', error);
+      console.error(`Failed to update Calendar Entry. User Id: ${userId}, Calendar Id: ${updatedEvent.id}`, error);
+      throw new Error(`Failed to update Calendar Entry. User Id: ${userId}, Calendar Id: ${updatedEvent.id}`);
     }
-};
+  }
 ```
 
 - **`method: 'PUT'`**: Die PUT-Methode wird verwendet, um eine bestehende Ressource zu aktualisieren.
@@ -120,16 +125,21 @@ const updateFlight = async (id, updatedFlightData) => {
 Zum Löschen von Einträgen, wie z.B. das Entfernen eines Fluges, wird eine HTTP-DELETE-Anfrage verwendet:
 
 ```javascript
-const deleteFlight = async (id) => {
+export async function deleteCalendarEntryById(userId, calendarId) {
     try {
-        await fetch(`http://localhost:3001/flights/${id}`, {
-            method: 'DELETE'
-        });
+      const response = await fetch(`http://localhost:3001/calendarEntries/${calendarId}?userId=${userId}`, {
+        method: 'DELETE',
+      });
+  
+      if (!response.ok) {
+        throw new Error(`Failed to delete Calendar Entry. User Id: ${userId}, Calendar Id: ${calendarId}`);
+      }
+      console.log(`Deleted Calendar Entry. User Id: ${userId}, Calendar Id: ${calendarId}`);
     } catch (error) {
-        console.error('Error deleting flight:', error);
+      console.error(`Failed to delete Calendar Entry. User Id: ${userId}, Calendar Id: ${calendarId}`, error);
+      throw new Error(`Failed to delete Calendar Entry. User Id: ${userId}, Calendar Id: ${calendarId}`);
     }
-};
-```
+  }
 
 - **`method: 'DELETE'`**: Die DELETE-Methode wird verwendet, um eine Ressource zu löschen.
 - **`URL mit ID`**: Die spezifische Ressource wird über die ID in der URL angesprochen.
