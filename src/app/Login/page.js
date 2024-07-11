@@ -5,6 +5,7 @@ import styled from 'styled-components';
 import { setCookie } from 'cookies-next';
 import { getUserByUserAndPassword } from '@/userdataservice'; // Annahme: Deine API-Funktion zum Abrufen des Benutzers
 import { useRouter } from 'next/navigation'; // Router-Hook von Next.js
+import { publish } from '@/events';
 
 const LoginContainer = styled.div`
   width: 100%;
@@ -66,6 +67,7 @@ const LoginForm = () => {
       setCookie('userId', user.userId.toString(), { path: '/' });
       console.log('User logged in:', user);
       router.push('/'); // Navigiere zur Seite / nach erfolgreichem Login
+      publish('userChanged')
     } catch (error) {
       console.error('Login failed:', error);
       // Hier könntest du eine Fehlermeldung anzeigen oder andere Handhabungen für fehlgeschlagene Anmeldungen durchführen

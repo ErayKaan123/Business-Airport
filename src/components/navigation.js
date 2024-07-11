@@ -4,6 +4,7 @@ import React, { useEffect, useState } from 'react';
 import { getCookie } from 'cookies-next';
 import { Lobster } from "next/font/google";
 import { getUserById } from '@/userdataservice';
+import { subscribe } from '@/events';
 
 const lobster = Lobster({ subsets: ["latin"], weight: "400" });
 
@@ -22,6 +23,7 @@ export default function Navigation() {
         };
 
         checkCookie();
+        subscribe('userChanged', () => checkCookie())
     }, []); // Only run once when the component mounts
 
     useEffect(() => {
