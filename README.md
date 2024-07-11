@@ -39,8 +39,10 @@ Die Projektstruktur umfasst die folgenden Hauptkomponenten:
 Die Anwendung implementiert die folgenden drei Anwendungsfälle:
 
 1. **Flugtickets kaufen**: Benutzer können Flugtickets kaufen, Flüge hinzufügen, anzeigen und verwalten.
-2. **Kalenderansicht**: Termine und Flüge werden in einem Kalender angezeigt, sodass Benutzer ihre Zeitpläne leicht verwalten können.
-3. **Login mit Cookie**: Benutzer können sich einloggen, wobei die Authentifizierung über Cookies verwaltet wird.
+    ![image](https://github.com/user-attachments/assets/1d306b67-0e85-42e9-bb56-5cac2366963a)
+
+3. **Kalenderansicht**: Termine und Flüge werden in einem Kalender angezeigt, sodass Benutzer ihre Zeitpläne leicht verwalten können.
+4. **Login mit Cookie**: Benutzer können sich einloggen, wobei die Authentifizierung über Cookies verwaltet wird.
 
 ### CRUD-Operationen im Detail
 
