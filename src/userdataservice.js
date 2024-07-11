@@ -25,7 +25,10 @@ export async function getUserById(id) {
             if (data.length > 0) {
                 return data[0]; // Gibt das erste gefundene Benutzerobjekt zurück
             } else {
-                throw new Error('User not found');
+                if(data){
+                    console.log(id);
+                    throw new Error('User not found' + id);
+                }
             }
         } else {
             throw new Error('Failed to fetch user data');

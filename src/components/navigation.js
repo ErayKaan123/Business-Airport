@@ -9,23 +9,27 @@ const lobster = Lobster({ subsets: ["latin"], weight: "400" });
 
 export default function Navigation() {
     const [isLoggedIn, setIsLoggedIn] = useState(false);
-    const [userID, setUserID] = useState();
+    const [user, setUser] = useState(null);
 
     useEffect(() => {
-        const checkCookie = () => {
-            setUserID(getCookie('userId'));
-            setIsLoggedIn(!!userID); // Convert the userId to a boolean
+        const checkCookie = async () => {
+            const userid = getCookie('userId');
+            if (userid) {
+                const fetchedUser = await getUserById(userid);
+                setUser(fetchedUser);
+                console.log(fetchedUser);
+            }
         };
 
-        // Initial check
         checkCookie();
+    }, []); // Only run once when the component mounts
 
-        // Check every 5 seconds
-        const intervalId = setInterval(checkCookie, 5000);
-
-        // Cleanup interval on component unmount
-        return () => clearInterval(intervalId);
-    }, []);
+    useEffect(() => {
+        // This effect will run whenever user changes
+        if (user) {
+            console.log(user);
+        }
+    }, [user]);
 
     return (
         <div style={{
@@ -50,11 +54,10 @@ export default function Navigation() {
                 <a className="font-medium text-lg text-white" href="./" aria-current="page">Home</a>
                 <a className="font-medium text-lg text-neutral-400 hover:text-white" href="./Tickets">Buy Tickets</a>
                 <a className="font-medium text-lg text-neutral-400 hover:text-white" href="./Calendar">Calendar</a>
-                {!isLoggedIn && (
+                {!user ? (
                     <a className="font-medium text-lg text-neutral-400 hover:text-white" href="./Login">Login</a>
-                )}
-                {isLoggedIn && (
-                    <p className="text-lg text-center">Logged in as:{getUserById(userID).username.toString()}</p>
+                ) : (
+                    <a className="text-lg text-center text-neutral-400 hover:text-white" href="./Login">Logged in as: {user.username}</a>
                 )}
             </div>
         </div>
