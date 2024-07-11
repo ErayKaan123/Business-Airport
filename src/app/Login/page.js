@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import { setCookie } from 'cookies-next';
-import { getUserByUserAndPassword } from '@/userDataService'; // Annahme: Deine API-Funktion zum Abrufen des Benutzers
+import { getUserByUserAndPassword } from '@/userdataservice'; // Annahme: Deine API-Funktion zum Abrufen des Benutzers
 import { useRouter } from 'next/navigation'; // Router-Hook von Next.js
 
 const LoginContainer = styled.div`
