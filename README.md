@@ -161,8 +161,9 @@ Das Projekt demonstriert die folgenden Kompetenzen:
 
 Für Fragen oder Support, kontaktieren Sie bitte:
 
-- **Entwickler**: Eray Kaan Cevik, 
-- **E-Mail**: luigi@example.com
+- **Entwickler**: Eray Kaan Cevik, Jean Luc Jordi
+- **E-Mail**: eray.cevik@lernende.bbw.ch, jean.jordi@lernende.bbw.ch
+- 
 
 ---
 
