@@ -1,91 +1,105 @@
-/* src/Calendar.css */
-.calendar {
-    width: 300px;
-    margin: 0 auto;
-    font-family: Arial, sans-serif;
+.calendar-container {
+  width: 100%;
+  max-width: 800px;
+  margin: 20px auto 0;
+  padding: 20px;
+  background: #f0f4f8;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-.month-display {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+.title {
+  text-align: center;
+  color: #333;
 }
 
-.day-names,
-.week {
-    display: flex;
+.section-title {
+  margin-top: 20px;
+  color: #555;
 }
 
-.day-name,
-.day {
-    width: 40px;
-    height: 40px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.form {
+  display: flex;
+  flex-direction: column;
 }
 
-.faded {
-    color: #ccc;
+.input, .textarea {
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
 }
 
-button {
-    background: none;
-    border: none;
-    cursor: pointer;
-    font-size: 18px;
+.button {
+  padding: 10px 20px;
+  margin-top: 10px;
+  background: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
 }
 
-header {
-    text-align: center;
-    margin-bottom: 10px;
+.button:hover {
+  background: #0056b3;
 }
 
-.calendar-body {
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    overflow: hidden;
+.events-list {
+  list-style-type: none;
+  padding: 0;
 }
-/* src/App.css */
 
-.App {
-    font-family: Arial, sans-serif;
-    padding: 20px;
-  }
-  
-  h1 {
-    text-align: center;
-  }
-  
-  h2 {
-    margin-top: 20px;
-  }
-  
-  input, textarea {
-    display: block;
-    margin: 10px 0;
-  }
-  
-  button {
-    display: block;
-    margin-top: 10px;
-    padding: 10px 20px;
-  }
-  
-  ul {
-    list-style-type: none;
-    padding: 0;
-  }
-  
-  li {
-    background-color: #f9f9f9;
-    border: 1px solid #ddd;
-    margin-bottom: 10px;
-    padding: 10px;
-  }
-  
-  strong {
-    display: block;
-    margin-bottom: 5px;
-  }
-  
+.event-item {
+  position: relative;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 4px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.event-title {
+  display: block;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+.event-description {
+  margin: 0;
+  color: #666;
+}
+
+.actions {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  display: flex;
+  gap: 12px;
+}
+
+.delete-all-button {
+  padding: 10px 20px;
+  margin-top: 10px;
+  background: #ff0000;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.delete-all-button:hover {
+  background: #cc0000;
+}
+.AppContainer{
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  width: 100vw;
+  min-height: calc(100vh - 100px);
+  overflow: visible;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: #e9ecef;
+}
