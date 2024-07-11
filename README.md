@@ -42,7 +42,11 @@ Die Anwendung implementiert die folgenden drei Anwendungsfälle:
     ![image](https://github.com/user-attachments/assets/1d306b67-0e85-42e9-bb56-5cac2366963a)
 
 3. **Kalenderansicht**: Termine und Flüge werden in einem Kalender angezeigt, sodass Benutzer ihre Zeitpläne leicht verwalten können.
-4. **Login mit Cookie**: Benutzer können sich einloggen, wobei die Authentifizierung über Cookies verwaltet wird.
+   ![image](https://github.com/user-attachments/assets/c6805037-0077-4945-b16e-40a7f9e511d0)
+
+5. **Login mit Cookie**: Benutzer können sich einloggen, wobei die Authentifizierung über Cookies verwaltet wird.
+   ![image](https://github.com/user-attachments/assets/d55ef696-451a-4254-bf4d-33043dc2cd8e)
+
 
 ### CRUD-Operationen im Detail
 
