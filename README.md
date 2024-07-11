@@ -149,7 +149,7 @@ export async function deleteCalendarEntryById(userId, calendarId) {
 
 - **`method: 'DELETE'`**: Die DELETE-Methode wird verwendet, um eine Ressource zu löschen.
 - **`URL mit ID`**: Die spezifische Ressource wird über die ID in der URL angesprochen.
-
+```
 ---
 
 ## 📊 Präsentation
