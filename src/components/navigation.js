@@ -51,10 +51,10 @@ export default function Navigation() {
                 <a className="font-medium text-lg text-neutral-400 hover:text-white" href="./Tickets">Buy Tickets</a>
                 <a className="font-medium text-lg text-neutral-400 hover:text-white" href="./Calendar">Calendar</a>
                 {!isLoggedIn && (
-                    <a className="font-medium text-lg text-neutral-400 hover:text-white" href="/Login">Login</a>
+                    <a className="font-medium text-lg text-neutral-400 hover:text-white" href="./Login">Login</a>
                 )}
                 {isLoggedIn && (
-                    <p className="text-lg text-center">Logged in as:{getUserById(userID)}</p>
+                    <p className="text-lg text-center">Logged in as:{getUserById(userID).username.toString()}</p>
                 )}
             </div>
         </div>
