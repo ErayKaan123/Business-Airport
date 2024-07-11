@@ -3,16 +3,18 @@
 import React, { useEffect, useState } from 'react';
 import { getCookie } from 'cookies-next';
 import { Lobster } from "next/font/google";
+import { getUserById } from '@/userdataservice';
 
 const lobster = Lobster({ subsets: ["latin"], weight: "400" });
 
 export default function Navigation() {
     const [isLoggedIn, setIsLoggedIn] = useState(false);
+    const [userID, setUserID] = useState();
 
     useEffect(() => {
         const checkCookie = () => {
-            const userId = getCookie('userId');
-            setIsLoggedIn(!!userId); // Convert the userId to a boolean
+            setUserID(getCookie('userId'));
+            setIsLoggedIn(!!userID); // Convert the userId to a boolean
         };
 
         // Initial check
@@ -45,15 +47,14 @@ export default function Navigation() {
                 <p style={{ fontSize: "100%", display: "inline", fontFamily: lobster.style.fontFamily, fontWeight: "400", textShadow: "0 0 25px #fffff2" }}>RPort</p>
             </a>
             <div className="flex flex-row items-center gap-5 mt-5 mr-5 sm:justify-end sm:mt-0 sm:ps-5">
-                <a className="font-medium text-lg text-white" href="/" aria-current="page">Home</a>
-                <a className="font-medium text-lg text-neutral-400 hover:text-white" href="/Tickets">Buy Tickets</a>
-                <a className="font-medium text-lg text-neutral-400 hover:text-white" href="/Calendar">Calendar</a>
-                <a className="font-medium text-lg text-neutral-400 hover:text-white" href="/Contact">Contact</a>
+                <a className="font-medium text-lg text-white" href="./" aria-current="page">Home</a>
+                <a className="font-medium text-lg text-neutral-400 hover:text-white" href="./Tickets">Buy Tickets</a>
+                <a className="font-medium text-lg text-neutral-400 hover:text-white" href="./Calendar">Calendar</a>
                 {!isLoggedIn && (
                     <a className="font-medium text-lg text-neutral-400 hover:text-white" href="/Login">Login</a>
                 )}
                 {isLoggedIn && (
-                    <p className="text-lg text-center">Logged in as: 115eraykaan32@gmail.com</p>
+                    <p className="text-lg text-center">Logged in as:{getUserById(userID)}</p>
                 )}
             </div>
         </div>
