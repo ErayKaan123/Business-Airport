@@ -165,6 +165,8 @@ Die Projektpräsentation umfasst:
 - Das Vorstellen des Quellcodes.
 - Live-Demo der Anwendung.
 
+Die Präsentation können sie sich unter: https://drive.google.com/file/d/1uIf6Y3Fuft3R5GSXVi_e-xDXcwy6B8sw/view?usp=sharing herunterladen 
+
 ---
 
 ## 📚 Kompetenzen
