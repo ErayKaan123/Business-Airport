@@ -1,10 +1,10 @@
-### RPort Flughafen 
+### RPort Flughafen App
 
 ---
 
 ## 📋 Projektübersicht
 
-Willkommen zur **RPort Website**! Diese Anwendung ist dafür konzipiert, Flüge zu buchen und die gebuchten Flüge und Termine in einem Kalender zu verwalten. Das Projekt nutzt Next Js für das Frontend und einen JSON-Server auf Port 3001 für das Backend.
+Willkommen zur **RPort Website**! Diese Anwendung ist dafür konzipiert, Flüge zu buchen und die gebuchten Flüge und Termine in einem Kalender zu verwalten. Das Projekt nutzt Next.js für das Frontend und einen JSON-Server auf Port 3001 für das Backend.
 
 ---
 
@@ -26,9 +26,9 @@ Die Projektstruktur umfasst die folgenden Hauptkomponenten:
 
 - `app/`: Hauptverzeichnis der Anwendung.
 - `components/`: Enthält React-Komponenten.
-- `dataservice.js`: Datenservice zur Verwaltung von CRUD-Operationen. 
+- `dataservice.js`: Datenservice zur Verwaltung von CRUD-Operationen.
 - `dialogs/`: Dialogkomponenten für die App.
-- `userdataservice.js`: Benutzerdatenservice zur Verwaltung von CRUD-Operationen von Benutzer Daten.
+- `userdataservice.js`: Benutzerdatenservice zur Verwaltung von CRUD-Operationen von Benutzerdaten.
 
 ---
 
@@ -163,12 +163,9 @@ Für Fragen oder Support, kontaktieren Sie bitte:
 
 - **Entwickler**: Eray Kaan Cevik, Jean Luc Jordi
 - **E-Mail**: eray.cevik@lernende.bbw.ch, jean.jordi@lernende.bbw.ch
-- 
 
 ---
 
 Viel Erfolg beim Programmieren! 🚀✨
 
 ---
-
-Dieses README-Dokument erfasst den Kern des Projekts und bietet detaillierte Anweisungen und Beschreibungen basierend auf dem bereitgestellten PDF-Dokument.
