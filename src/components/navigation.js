@@ -48,7 +48,7 @@ export default function Navigation() {
             zIndex: "100",
             boxShadow: "0 5px 25px #040404"
         }}>
-            <a href="/">
+            <a href="./">
                 <img style={{ height: "70%", display: "inline", marginRight: "10px" }} src="Images/RPortIcon.svg" />
                 <p style={{ fontSize: "100%", display: "inline", fontFamily: lobster.style.fontFamily, fontWeight: "400", textShadow: "0 0 25px #fffff2" }}>RPort</p>
             </a>
