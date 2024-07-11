@@ -4,7 +4,10 @@
 
 ## 📋 Projektübersicht
 
-Willkommen zur **RPort Website**! Diese Anwendung ist dafür konzipiert, Flüge zu buchen und die gebuchten Flüge und Termine in einem Kalender zu verwalten. Das Projekt nutzt Next.js für das Frontend und einen JSON-Server auf Port 3001 für das Backend.
+Willkommen zur **RPort Projekt**! Diese Anwendung ist dafür konzipiert, Flüge zu buchen und die gebuchten Flüge und Termine in einem Kalender zu verwalten. Das Projekt nutzt Next.js für das Frontend und einen JSON-Server auf Port 3001 für das Backend.
+
+---
+## 📷 Live-Demo
 
 ---
 
@@ -157,7 +160,7 @@ export async function deleteCalendarEntryById(userId, calendarId) {
 Die Projektpräsentation umfasst:
 
 - Beschreibung der Anwendungsfälle.
-- Screenshots oder Wireframes der Anwendung.
+- Das Vorstellen des Quellcodes.
 - Live-Demo der Anwendung.
 
 ---
@@ -182,6 +185,6 @@ Für Fragen oder Support, kontaktieren Sie bitte:
 
 ---
 
-Viel Erfolg beim Programmieren! 🚀✨
+Dieses Projekt hat uns sehr Spass gemacht und wir konnten sehr vieles draus lernen! 🚀✨
 
 ---
